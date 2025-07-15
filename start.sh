@@ -19,6 +19,7 @@ LEVELS=(
   "📡 LEVEL 16: ping, traceroute, ip addr, ifconfig"
   "🎯 LEVEL 17: jq"
   "📝 LEVEL 18: neovim podstawy"
+  "🗜️ LEVEL 19: Archiwa i kompresja"
   "🏁 SANDBOX: Tryb wolny z losowymi wyzwaniami"
 )
 
@@ -175,6 +176,17 @@ function level18() {
   echo "📝 LEVEL 18: Neovim"
   echo "Uruchom: nvim plik.txt"
   echo "Wpisz i (tryb insert), ESC, :wq (zapisz i wyjdź)"
+}
+
+function level19() {
+  clear
+  echo "🗜️ LEVEL 19: Archiwa i kompresja"
+  echo "Naucz się korzystać z tar, zip i unzip."
+  echo "Przykłady:"
+  echo "  Rozpakuj: tar xf archive.tar"
+  echo "  Stwórz: tar cf archive.tar plik1 plik2"
+  echo "  Spakuj: zip archive.zip plik1 plik2"
+  echo "  Rozpakuj zip: unzip archive.zip"
 }
 
 function sandbox() {
