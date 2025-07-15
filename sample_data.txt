@@ -1,0 +1,13 @@
+Jan:25:Warszawa:Developer
+Anna:30:Kraków:Designer
+Piotr:28:Gdańsk:Manager
+Maria:35:Wrocław:Analyst
+Tomasz:22:Łódź:Intern
+Katarzyna:29:Poznań:Developer
+Michał:31:Szczecin:Manager
+Agata:27:Lublin:Designer
+Paweł:26:Katowice:Developer
+Ewa:33:Bydgoszcz:Analyst
+Jan:25:Warszawa:Developer
+Anna:30:Kraków:Designer
+Piotr:28:Gdańsk:Manager
