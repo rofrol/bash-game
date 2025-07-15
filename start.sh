@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Signal handler for Ctrl+C
+function handle_sigint() {
+  echo
+  echo "Dzięki za grę! 👋"
+  exit 0
+}
+
+# Set up signal handler
+trap handle_sigint SIGINT
+
 LEVELS=(
   "🔍 LEVEL 1: man ls — znajdź flagę -1"
   "🧠 LEVEL 2: Nawigacja w man: wyszukaj słowo 'sort'"
@@ -34,12 +44,12 @@ function show_menu() {
   done
   echo "  0. Wyjście"
   echo
-  read -p "Wybierz poziom: " choice
+  read -p "Wybierz poziom: " choice || handle_sigint
   if [[ $choice =~ ^[0-9]+$ && $choice -ge 0 && $choice -le ${#LEVELS[@]} ]]; then
     run_level $choice
   else
     echo "Nieprawidłowy wybór. Naciśnij Enter."
-    read
+    read || handle_sigint
     show_menu
 
     # Dodaj alias do ~/.bashrc
@@ -56,7 +66,7 @@ function run_level() {
   11) level11 ;; 12) level12 ;; 13) level13 ;; 14) level14 ;; 15) level15 ;;
   16) level16 ;; 17) level17 ;; 18) level18 ;; 19) sandbox ;; 0) exit ;;
   esac
-  read -p "Naciśnij Enter, by wrócić do menu..."
+  read -p "Naciśnij Enter, by wrócić do menu..." || handle_sigint
   show_menu
 }
 
@@ -92,6 +102,8 @@ function level5() {
   echo "🧹 LEVEL 5: Czyszczenie i anulowanie"
   echo "Użyj Ctrl+C by przerwać proces, a clear lub reset by wyczyścić ekran."
   echo "Wpisz sleep 100 i anuluj go Ctrl+C."
+  echo
+  echo "💡 Wskazówka: Ctrl+C w menu gry również kończy grę."
 }
 
 function level6() {
