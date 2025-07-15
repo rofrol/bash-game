@@ -1,6 +1,22 @@
 #!/bin/bash
 
-# Signal handler for Ctrl+C
+# Sig  "🎨 LEVEL 5: Personalizacja PS1 — dostosuj swój prompt"
+  "🚀 LEVEL 6: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
+  "🧹 LEVEL 7: Ctrl+C, clear/reset"
+  "📜 LEVEL 8: Historia — strzałka w górę, Ctrl+R"
+  "📂 LEVEL 9: cd, pwd, cd -, cd ~"
+  "📁 LEVEL 10: mkdir, rm, cp, mv"
+  "📄 LEVEL 11: tee, >out.txt 2>&1, 2>/dev/null"
+  "🔐 LEVEL 12: chmod, chown"
+  "🔎 LEVEL 13: find, grep, awk, sed, rg, fd"
+  "📈 LEVEL 14: ps aux, kill -9, top, htop, btop"
+  "🌐 LEVEL 15: curl, wget"
+  "🧰 LEVEL 16: tail, head, wc -l, xargs"
+  "👤 LEVEL 17: whoami, id"
+  "📡 LEVEL 18: ping, traceroute, ip addr, ifconfig"
+  "🎯 LEVEL 19: jq"
+  "📝 LEVEL 20: neovim podstawy"
+  "🗜️ LEVEL 21: Archiwa i kompresja"Ctrl+C
 function handle_sigint() {
   echo
   echo "Dzięki za grę! 👋"
@@ -15,7 +31,8 @@ LEVELS=(
   "�🔍 LEVEL 2: man ls — znajdź flagę -1"
   "🧠 LEVEL 3: Nawigacja w man: wyszukaj słowo 'sort'"
   "⚙️ LEVEL 4: Zmienna środowiskowa \$EDITOR"
-  "🚀 LEVEL 5: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
+  "🎨 LEVEL 5: Personalizacja PS1 — dostosuj swój prompt"
+  "🚀 LEVEL 6: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
   "🧹 LEVEL 6: Ctrl+C, clear/reset"
   "📜 LEVEL 7: Historia — strzałka w górę, Ctrl+R"
   "📂 LEVEL 8: cd, pwd, cd -, cd ~"
@@ -65,7 +82,8 @@ function run_level() {
   1) level1 ;; 2) level2 ;; 3) level3 ;; 4) level4 ;; 5) level5 ;;
   6) level6 ;; 7) level7 ;; 8) level8 ;; 9) level9 ;; 10) level10 ;;
   11) level11 ;; 12) level12 ;; 13) level13 ;; 14) level14 ;; 15) level15 ;;
-  16) level16 ;; 17) level17 ;; 18) level18 ;; 19) level19 ;; 20) sandbox ;; 0) exit ;;
+  16) level16 ;; 17) level17 ;; 18) level18 ;; 19) level19 ;; 20) level20 ;;
+  21) level21 ;; 22) sandbox ;; 0) exit ;;
   esac
   read -p "Naciśnij Enter, by wrócić do menu..." || handle_sigint
   show_menu
@@ -131,30 +149,47 @@ function level4() {
 
 function level5() {
   clear
-  echo "🚀 LEVEL 5: Poruszanie się po linii"
-  echo "Użyj: Ctrl+A (początek), Ctrl+E (koniec), Backspace, Ctrl+D (usuń)"
-  echo "Wprowadź długie polecenie i poćwicz nawigację."
-}
-
-function level5() {
-  clear
-  echo "🚀 LEVEL 5: Poruszanie się po linii"
-  echo "Użyj: Ctrl+A (początek), Ctrl+E (koniec), Backspace, Ctrl+D (usuń)"
-  echo "Wprowadź długie polecenie i poćwicz nawigację."
-}
-
-function level6() {
-  clear
-  echo "🧹 LEVEL 6: Czyszczenie i anulowanie"
-  echo "Użyj Ctrl+C by przerwać proces, a clear lub reset by wyczyścić ekran."
-  echo "Wpisz sleep 100 i anuluj go Ctrl+C."
+  echo "🎨 LEVEL 5: Personalizacja PS1"
+  echo "Zadanie: Dostosuj swój prompt bash do własnych potrzeb"
   echo
-  echo "💡 Wskazówka: Ctrl+C w menu gry również kończy grę."
+  echo "Podstawowe elementy PS1:"
+  echo "  \\u - nazwa użytkownika"
+  echo "  \\h - nazwa hosta"
+  echo "  \\w - bieżący katalog"
+  echo "  \\W - tylko nazwa bieżącego katalogu"
+  echo "  \\d - data"
+  echo "  \\t - czas (24h)"
+  echo "  \\T - czas (12h)"
+  echo "  \\$ - znak # dla root, $ dla zwykłego użytkownika"
+  echo
+  echo "Kolory (użyj \\[\\e[XXm\\] na początku, \\[\\e[0m\\] na końcu):"
+  echo "  30-37: czarny, czerwony, zielony, żółty, niebieski, magenta, cyan, biały"
+  echo "  1m: pogrubienie, 4m: podkreślenie"
+  echo
+  echo "Przykłady:"
+  echo "  export PS1='\\u@\\h:\\w\\$ '  # domyślny"
+  echo "  export PS1='\\[\\e[32m\\]\\u@\\h\\[\\e[0m\\]:\\[\\e[34m\\]\\w\\[\\e[0m\\]\\$ '"
+  echo "  export PS1='[\\t] \\u in \\W > '"
+  echo
+  echo "💡 Wskazówka: Możesz dodać to do ~/.bashrc by zachować na stałe"
 }
 
 function level6() {
   clear
-  echo "🧹 LEVEL 6: Czyszczenie i anulowanie"
+  echo "🚀 LEVEL 6: Poruszanie się po linii"
+  echo "Użyj: Ctrl+A (początek), Ctrl+E (koniec), Backspace, Ctrl+D (usuń)"
+  echo "Wprowadź długie polecenie i poćwicz nawigację."
+  echo
+  echo "Dodatkowe skróty:"
+  echo "  Ctrl+U - usuń całą linię"
+  echo "  Ctrl+K - usuń od kursora do końca linii"
+  echo "  Ctrl+W - usuń słowo przed kursorem"
+  echo "  Alt+F / Alt+B - przesuń kursor o słowo"
+}
+
+function level7() {
+  clear
+  echo "🧹 LEVEL 7: Czyszczenie i anulowanie"
   echo "Użyj Ctrl+C by przerwać proces, a clear lub reset by wyczyścić ekran."
   echo "Wpisz sleep 100 i anuluj go Ctrl+C."
   echo
@@ -315,16 +350,16 @@ function level18() {
   echo "echo '{"name": "John"}' | jq .name"
 }
 
-function level19() {
+function level20() {
   clear
-  echo "📝 LEVEL 19: Neovim"
+  echo "📝 LEVEL 20: Neovim"
   echo "Uruchom: nvim plik.txt"
   echo "Wpisz i (tryb insert), ESC, :wq (zapisz i wyjdź)"
 }
 
-function level20() {
+function level21() {
   clear
-  echo "🗜️ LEVEL 20: Archiwa i kompresja"
+  echo "🗜️ LEVEL 21: Archiwa i kompresja"
   echo "Naucz się korzystać z tar, zip i unzip."
   echo "Przykłady:"
   echo "  Rozpakuj: tar xf archive.tar"
