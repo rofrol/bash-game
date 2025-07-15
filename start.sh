@@ -183,9 +183,27 @@ function level11() {
 
 function level12() {
   clear
-  echo "� LEVEL 12: Prawa dostępu"
-  echo "chmod +x script.sh, chown user:group file"
-  echo "Utwórz plik, nadaj mu prawa wykonywania."
+  echo "🔐 LEVEL 12: Prawa dostępu"
+  echo "Zadanie: Naucz się nadawać prawa dostępu i uruchamiać pliki"
+  echo
+  echo "Nadawanie uprawnień:"
+  echo "  chmod +x script.sh    - nadaj prawa wykonywania"
+  echo "  chmod 755 script.sh   - pełne prawa dla właściciela, odczyt+wykonanie dla innych"
+  echo "  chmod u+x script.sh   - dodaj prawo wykonywania dla właściciela"
+  echo "  chown user:group file - zmień właściciela i grupę"
+  echo
+  echo "Uruchamianie plików wykonywalnych:"
+  echo "  ./script.sh           - uruchom skrypt w bieżącym katalogu"
+  echo "  bash script.sh        - uruchom skrypt przez bash (nie wymaga chmod +x)"
+  echo "  sh script.sh          - uruchom skrypt przez sh"
+  echo
+  echo "💡 Wskazówka: Przed uruchomieniem ./script.sh musisz nadać prawa: chmod +x script.sh"
+  echo "💡 Alternatywnie: bash script.sh działa bez chmod +x"
+  echo
+  echo "Przykład:"
+  echo "  echo 'echo Hello World' > hello.sh"
+  echo "  chmod +x hello.sh"
+  echo "  ./hello.sh"
 }
 
 function level13() {
