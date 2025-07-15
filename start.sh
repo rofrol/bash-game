@@ -266,16 +266,13 @@ function level11() {
 
 function level12() {
   clear
-  echo "�🔎 LEVEL 12: Wyszukiwanie"
+  echo "🔎 LEVEL 12: Wyszukiwanie"
   echo "find . -name '*.txt', grep 'hello' file.txt, sed 's/old/new/'"
   echo "awk '{print $1}', rg 'foo', fd bar"
-}
-
-function level12() {
-  clear
-  echo "� LEVEL 12: Wyszukiwanie"
-  echo "find . -name '*.txt', grep 'hello' file.txt, sed 's/old/new/'"
-  echo "awk '{print $1}', rg 'foo', fd bar"
+  echo
+  echo "Sortowanie i przetwarzanie:"
+  echo "  sort file.txt | uniq - usuń duplikaty"
+  echo "  grep 'pattern' file | sort | uniq -c - znajdź, sortuj i policz"
 }
 
 function level13() {
@@ -306,12 +303,17 @@ function level15() {
   clear
   echo "🧰 LEVEL 15: Strumienie i liczenie"
   echo "tail -f file.log, head file, wc -l file, cat list | xargs rm"
-}
-
-function level15() {
-  clear
-  echo "🧰 LEVEL 15: Strumienie i liczenie"
-  echo "tail -f file.log, head file, wc -l file, cat list | xargs rm"
+  echo
+  echo "Sortowanie i usuwanie duplikatów:"
+  echo "  sort file.txt     - sortuj linie w pliku"
+  echo "  sort -n file.txt  - sortuj numerycznie"
+  echo "  sort -r file.txt  - sortuj w odwrotnej kolejności"
+  echo "  uniq file.txt     - usuń duplikaty (plik musi być posortowany!)"
+  echo "  sort file.txt | uniq    - sortuj i usuń duplikaty"
+  echo "  sort file.txt | uniq -c - policz wystąpienia"
+  echo "  sort file.txt | uniq -d - pokaż tylko duplikaty"
+  echo
+  echo "Przykład: cat /etc/passwd | cut -d: -f7 | sort | uniq -c"
 }
 
 function level16() {
