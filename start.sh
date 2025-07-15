@@ -89,7 +89,18 @@ function level2() {
   clear
   echo "🔍 LEVEL 2: man ls"
   echo "Zadanie: Otwórz podręcznik polecenia 'ls' i znajdź opis flagi -1"
-  echo "Użyj: man ls, /-1 by wyszukać"
+  echo
+  echo "Użyj: man ls"
+  echo "Wyszukaj flagę -1 używając: /-1 (w man page)"
+  echo "Nawigacja w man:"
+  echo "  q - wyjście"
+  echo "  /tekst - wyszukaj tekst"
+  echo "  n - następne wystąpienie"
+  echo "  N - poprzednie wystąpienie"
+  echo "  spacja - następna strona"
+  echo "  b - poprzednia strona"
+  echo
+  echo "💡 Wskazówka: Flaga -1 wymusza wyświetlanie jednego pliku na linię"
 }
 
 function level3() {
