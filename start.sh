@@ -1,6 +1,20 @@
 #!/bin/bash
 
-# Sig  "🎨 LEVEL 5: Personalizacja PS1 — dostosuj swój prompt"
+function handle_sigint() {
+  echo
+  echo "Dzięki za grę! 👋"
+  exit 0
+}
+
+# Set up signal handler
+trap handle_sigint SIGINT
+
+LEVELS=(
+  "📁 LEVEL 1: ls podstawy — wyświetlanie plików i folderów"
+  "🔍 LEVEL 2: man ls — znajdź flagę -1"
+  "🧠 LEVEL 3: Nawigacja w man: wyszukaj słowo 'sort'"
+  "⚙️ LEVEL 4: Zmienna środowiskowa \$EDITOR"
+  "🎨 LEVEL 5: Personalizacja PS1 — dostosuj swój prompt"
   "🚀 LEVEL 6: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
   "🧹 LEVEL 7: Ctrl+C, clear/reset"
   "📜 LEVEL 8: Historia — strzałka w górę, Ctrl+R"
@@ -16,38 +30,7 @@
   "📡 LEVEL 18: ping, traceroute, ip addr, ifconfig"
   "🎯 LEVEL 19: jq"
   "📝 LEVEL 20: neovim podstawy"
-  "🗜️ LEVEL 21: Archiwa i kompresja"Ctrl+C
-function handle_sigint() {
-  echo
-  echo "Dzięki za grę! 👋"
-  exit 0
-}
-
-# Set up signal handler
-trap handle_sigint SIGINT
-
-LEVELS=(
-  "� LEVEL 1: ls podstawy — wyświetlanie plików i folderów"
-  "�🔍 LEVEL 2: man ls — znajdź flagę -1"
-  "🧠 LEVEL 3: Nawigacja w man: wyszukaj słowo 'sort'"
-  "⚙️ LEVEL 4: Zmienna środowiskowa \$EDITOR"
-  "🎨 LEVEL 5: Personalizacja PS1 — dostosuj swój prompt"
-  "🚀 LEVEL 6: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
-  "🧹 LEVEL 6: Ctrl+C, clear/reset"
-  "📜 LEVEL 7: Historia — strzałka w górę, Ctrl+R"
-  "📂 LEVEL 8: cd, pwd, cd -, cd ~"
-  "📁 LEVEL 9: mkdir, rm, cp, mv"
-  "📄 LEVEL 10: tee, >out.txt 2>&1, 2>/dev/null"
-  "🔐 LEVEL 11: chmod, chown"
-  "🔎 LEVEL 12: find, grep, awk, sed, rg, fd"
-  "📈 LEVEL 13: ps aux, kill -9, top, htop, btop"
-  "🌐 LEVEL 14: curl, wget"
-  "🧰 LEVEL 15: tail, head, wc -l, xargs"
-  "👤 LEVEL 16: whoami, id"
-  "📡 LEVEL 17: ping, traceroute, ip addr, ifconfig"
-  "🎯 LEVEL 18: jq"
-  "📝 LEVEL 19: neovim podstawy"
-  "🗜️ LEVEL 20: Archiwa i kompresja"
+  "🗜️ LEVEL 21: Archiwa i kompresja"
   "🏁 SANDBOX: Tryb wolny z losowymi wyzwaniami"
 )
 
@@ -69,11 +52,6 @@ function show_menu() {
     echo "Nieprawidłowy wybór. Naciśnij Enter."
     read || handle_sigint
     show_menu
-
-    # Dodaj alias do ~/.bashrc
-    if ! grep -q 'alias gra=' ~/.bashrc; then
-      echo "alias gra='/home/student/game.sh'" >>~/.bashrc
-    fi
   fi
 }
 
@@ -91,7 +69,7 @@ function run_level() {
 
 function level1() {
   clear
-  echo "� LEVEL 1: ls podstawy"
+  echo "📁 LEVEL 1: ls podstawy"
   echo "Zadanie: Poznaj podstawowe użycie polecenia 'ls'"
   echo
   echo "Podstawowe polecenia:"
@@ -109,13 +87,6 @@ function level1() {
 
 function level2() {
   clear
-  echo "�🔍 LEVEL 2: man ls"
-  echo "Zadanie: Otwórz podręcznik polecenia 'ls' i znajdź opis flagi -1"
-  echo "Użyj: man ls, /-1 by wyszukać"
-}
-
-function level2() {
-  clear
   echo "🔍 LEVEL 2: man ls"
   echo "Zadanie: Otwórz podręcznik polecenia 'ls' i znajdź opis flagi -1"
   echo "Użyj: man ls, /-1 by wyszukać"
@@ -125,19 +96,6 @@ function level3() {
   clear
   echo "🧠 LEVEL 3: Wyszukiwanie w man"
   echo "Zadanie: Otwórz man ls, wyszukaj słowo 'sort' (użyj /sort) i przejdź dalej (n/N)"
-}
-
-function level3() {
-  clear
-  echo "🧠 LEVEL 3: Wyszukiwanie w man"
-  echo "Zadanie: Otwórz man ls, wyszukaj słowo 'sort' (użyj /sort) i przejdź dalej (n/N)"
-}
-
-function level4() {
-  clear
-  echo "⚙️ LEVEL 4: \$EDITOR"
-  echo "Sprawdź swoją zmienną środowiskową \$EDITOR (echo \$EDITOR) lub ustaw ją na neovim"
-  echo "Ustawienie: export EDITOR=nvim"
 }
 
 function level4() {
@@ -196,77 +154,43 @@ function level7() {
   echo "💡 Wskazówka: Ctrl+C w menu gry również kończy grę."
 }
 
-function level7() {
+function level8() {
   clear
-  echo "📜 LEVEL 7: Historia poleceń"
+  echo "� LEVEL 8: Historia poleceń"
   echo "Strzałki w górę/dół pozwalają przeglądać historię."
   echo "Ctrl+R aktywuje wyszukiwanie po historii."
 }
 
-function level7() {
-  clear
-  echo "� LEVEL 7: Historia poleceń"
-  echo "Strzałki w górę/dół pozwalają przeglądać historię."
-  echo "Ctrl+R aktywuje wyszukiwanie po historii."
-}
-
-function level8() {
-  clear
-  echo "�📂 LEVEL 8: Nawigacja po katalogach"
-  echo "Użyj: pwd, cd .., cd ~, cd - by poruszać się między katalogami."
-}
-
-function level8() {
-  clear
-  echo "� LEVEL 8: Nawigacja po katalogach"
-  echo "Użyj: pwd, cd .., cd ~, cd - by poruszać się między katalogami."
-}
-
 function level9() {
   clear
-  echo "�📁 LEVEL 9: Operacje na plikach"
-  echo "mkdir dir, mkdir -p a/b/c, rm -rf dir, cp, mv"
-  echo "Przenieś plik do folderu: mv f1.txt folder/"
-}
-
-function level9() {
-  clear
-  echo "� LEVEL 9: Operacje na plikach"
-  echo "mkdir dir, mkdir -p a/b/c, rm -rf dir, cp, mv"
-  echo "Przenieś plik do folderu: mv f1.txt folder/"
+  echo "� LEVEL 9: Nawigacja po katalogach"
+  echo "Użyj: pwd, cd .., cd ~, cd - by poruszać się między katalogami."
 }
 
 function level10() {
   clear
-  echo "�📄 LEVEL 10: Przekierowania"
-  echo "Użyj: echo hello | tee out.txt"
-  echo "ls >out.txt 2>&1, ls nonexist 2>/dev/null"
-}
-
-function level10() {
-  clear
-  echo "� LEVEL 10: Przekierowania"
-  echo "Użyj: echo hello | tee out.txt"
-  echo "ls >out.txt 2>&1, ls nonexist 2>/dev/null"
+  echo "� LEVEL 10: Operacje na plikach"
+  echo "mkdir dir, mkdir -p a/b/c, rm -rf dir, cp, mv"
+  echo "Przenieś plik do folderu: mv f1.txt folder/"
 }
 
 function level11() {
   clear
-  echo "�🔐 LEVEL 11: Prawa dostępu"
-  echo "chmod +x script.sh, chown user:group file"
-  echo "Utwórz plik, nadaj mu prawa wykonywania."
-}
-
-function level11() {
-  clear
-  echo "� LEVEL 11: Prawa dostępu"
-  echo "chmod +x script.sh, chown user:group file"
-  echo "Utwórz plik, nadaj mu prawa wykonywania."
+  echo "� LEVEL 11: Przekierowania"
+  echo "Użyj: echo hello | tee out.txt"
+  echo "ls >out.txt 2>&1, ls nonexist 2>/dev/null"
 }
 
 function level12() {
   clear
-  echo "🔎 LEVEL 12: Wyszukiwanie"
+  echo "� LEVEL 12: Prawa dostępu"
+  echo "chmod +x script.sh, chown user:group file"
+  echo "Utwórz plik, nadaj mu prawa wykonywania."
+}
+
+function level13() {
+  clear
+  echo "�🔎 LEVEL 13: Wyszukiwanie"
   echo "find . -name '*.txt', grep 'hello' file.txt, sed 's/old/new/'"
   echo "awk '{print $1}', rg 'foo', fd bar"
   echo
@@ -275,33 +199,21 @@ function level12() {
   echo "  grep 'pattern' file | sort | uniq -c - znajdź, sortuj i policz"
 }
 
-function level13() {
-  clear
-  echo "�📈 LEVEL 13: Procesy"
-  echo "ps aux | grep bash, kill -9 PID, top, htop, btop"
-}
-
-function level13() {
-  clear
-  echo "📈 LEVEL 13: Procesy"
-  echo "ps aux | grep bash, kill -9 PID, top, htop, btop"
-}
-
 function level14() {
   clear
-  echo "🌐 LEVEL 14: Pobieranie danych"
-  echo "curl https://example.com, wget https://example.com"
-}
-
-function level14() {
-  clear
-  echo "🌐 LEVEL 14: Pobieranie danych"
-  echo "curl https://example.com, wget https://example.com"
+  echo "📈 LEVEL 14: Procesy"
+  echo "ps aux | grep bash, kill -9 PID, top, htop, btop"
 }
 
 function level15() {
   clear
-  echo "🧰 LEVEL 15: Strumienie i liczenie"
+  echo "🌐 LEVEL 15: Pobieranie danych"
+  echo "curl https://example.com, wget https://example.com"
+}
+
+function level16() {
+  clear
+  echo "🧰 LEVEL 16: Strumienie i liczenie"
   echo "tail -f file.log, head file, wc -l file, cat list | xargs rm"
   echo
   echo "Sortowanie i usuwanie duplikatów:"
@@ -316,39 +228,21 @@ function level15() {
   echo "Przykład: cat /etc/passwd | cut -d: -f7 | sort | uniq -c"
 }
 
-function level16() {
-  clear
-  echo "👤 LEVEL 16: Informacje o użytkowniku"
-  echo "whoami, id, id -u"
-}
-
-function level16() {
-  clear
-  echo "� LEVEL 16: Informacje o użytkowniku"
-  echo "whoami, id, id -u"
-}
-
 function level17() {
   clear
-  echo "�📡 LEVEL 17: Sieć"
-  echo "ping 8.8.8.8, traceroute google.com, ip addr, ifconfig eth0"
-}
-
-function level17() {
-  clear
-  echo "📡 LEVEL 17: Sieć"
-  echo "ping 8.8.8.8, traceroute google.com, ip addr, ifconfig eth0"
+  echo "� LEVEL 17: Informacje o użytkowniku"
+  echo "whoami, id, id -u"
 }
 
 function level18() {
   clear
-  echo "🎯 LEVEL 18: jq"
-  echo "echo '{"name": "John"}' | jq .name"
+  echo "📡 LEVEL 18: Sieć"
+  echo "ping 8.8.8.8, traceroute google.com, ip addr, ifconfig eth0"
 }
 
-function level18() {
+function level19() {
   clear
-  echo "🎯 LEVEL 18: jq"
+  echo "🎯 LEVEL 19: jq"
   echo "echo '{"name": "John"}' | jq .name"
 }
 
