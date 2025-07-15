@@ -77,7 +77,7 @@ function level1() {
   echo "  ls -l        - format długi (szczegóły)"
   echo "  ls -a        - pokaż pliki ukryte (zaczynające się od .)"
   echo "  ls -la       - łącz opcje: długi format + pliki ukryte"
-  echo "  ls -h        - rozmiary w formacie czytelnym dla człowieka"
+  echo "  ls -lh        - rozmiary w formacie czytelnym dla człowieka"
   echo "  ls -t        - sortuj według daty modyfikacji"
   echo "  ls -r        - odwróć kolejność sortowania"
   echo
