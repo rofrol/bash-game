@@ -12,6 +12,8 @@ RUN apt update && apt install -y \
 
 RUN ln -s $(which fdfind) /usr/local/bin/fd
 
+RUN yes | unminimize
+
 # Create a training user
 RUN useradd -ms /bin/bash student && echo "student ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER student
