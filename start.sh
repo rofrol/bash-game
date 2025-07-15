@@ -40,6 +40,7 @@ LEVELS=(
   "🔗 LEVEL 28: Linki symboliczne i twarde"
   "⏰ LEVEL 29: cron i at - planowanie zadań"
   "🌍 LEVEL 30: Zmienne środowiskowe i PATH"
+  "🐳 LEVEL 31: Ctrl+D - wyjście z kontenerów i sesji interaktywnych"
   "🏁 SANDBOX: Tryb wolny z losowymi wyzwaniami"
 )
 
@@ -72,7 +73,7 @@ function run_level() {
   16) level16 ;; 17) level17 ;; 18) level18 ;; 19) level19 ;; 20) level20 ;;
   21) level21 ;; 22) level22 ;; 23) level23 ;; 24) level24 ;; 25) level25 ;;
   26) level26 ;; 27) level27 ;; 28) level28 ;; 29) level29 ;; 30) level30 ;;
-  31) sandbox ;; 0) exit ;;
+  31) level31 ;; 32) sandbox ;; 0) exit ;;
   esac
   read -p "Naciśnij Enter, by wrócić do menu..." || handle_sigint
   show_menu
@@ -645,6 +646,49 @@ function level30() {
   echo "  whereis command                - znajdź wszystkie lokalizacje"
   echo
   echo "💡 Wskazówka: Dodaj często używane ustawienia do ~/.bashrc"
+}
+
+function level31() {
+  clear
+  echo "🐳 LEVEL 31: Ctrl+D - wyjście z kontenerów i sesji interaktywnych"
+  echo "Zadanie: Naucz się wychodzić z kontenerów i sesji interaktywnych"
+  echo
+  echo "Ctrl+D - End of File (EOF):"
+  echo "  • Kończy wprowadzanie danych do programu"
+  echo "  • Zamyka sesje interaktywne"
+  echo "  • Wychodzi z kontenerów Docker"
+  echo "  • Kończy połączenia SSH"
+  echo
+  echo "Przykłady użycia:"
+  echo "  docker run -it ubuntu bash     - uruchom kontener Ubuntu"
+  echo "  # Wewnątrz kontenera naciśnij Ctrl+D aby wyjść"
+  echo
+  echo "  python3                        - uruchom interpreter Python"
+  echo "  # Naciśnij Ctrl+D aby wyjść z interpretera"
+  echo
+  echo "  ssh user@server                - połącz się przez SSH"
+  echo "  # Naciśnij Ctrl+D aby zakończyć sesję SSH"
+  echo
+  echo "  mysql -u root -p               - uruchom klienta MySQL"
+  echo "  # Naciśnij Ctrl+D aby wyjść z MySQL"
+  echo
+  echo "Różnica między Ctrl+C a Ctrl+D:"
+  echo "  • Ctrl+C (SIGINT) - przerywa aktualnie działający proces"
+  echo "  • Ctrl+D (EOF) - kończy wprowadzanie danych, zamyka sesję"
+  echo
+  echo "Przykłady praktyczne:"
+  echo "  cat > plik.txt                 - Ctrl+D zakończy wprowadzanie"
+  echo "  bc                             - kalkulator, Ctrl+D wyjdzie"
+  echo "  docker exec -it container bash - Ctrl+D wyjdzie z kontenera"
+  echo
+  echo "W kontekście Docker:"
+  echo "  docker run -it alpine          - uruchom kontener Alpine"
+  echo "  docker exec -it nazwa bash     - wejdź do działającego kontenera"
+  echo "  # Użyj Ctrl+D aby wyjść bez zatrzymywania kontenera"
+  echo "  # Użyj 'exit' lub Ctrl+D - oba działają podobnie"
+  echo
+  echo "💡 Wskazówka: Ctrl+D to elegancki sposób na wyjście z sesji"
+  echo "💡 Jeśli Ctrl+D nie działa, spróbuj wpisać 'exit' lub użyć Ctrl+C"
 }
 
 function sandbox() {
