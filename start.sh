@@ -42,6 +42,7 @@ LEVELS=(
   "⏰ LEVEL 29: cron i at - planowanie zadań"
   "🌍 LEVEL 30: Zmienne środowiskowe i PATH"
   "🐳 LEVEL 31: Ctrl+D - wyjście z kontenerów i sesji interaktywnych"
+  "🔤 LEVEL 23: Bash Escaping"
   "🏁 SANDBOX: Tryb wolny z losowymi wyzwaniami"
 )
 
@@ -754,6 +755,39 @@ function level31() {
   echo
   echo "💡 Wskazówka: Ctrl+D to elegancki sposób na wyjście z sesji"
   echo "💡 Jeśli Ctrl+D nie działa, spróbuj wpisać 'exit' lub użyć Ctrl+C"
+}
+
+function level32() {
+  clear
+  echo "🔤 LEVEL 23: Bash Escaping"
+  echo "Naucz się jak właściwie używać znaków specjalnych w bash"
+  echo
+  echo "=== REGUŁY ESCAPOWANIA W BASH ==="
+  echo
+  echo "1. Użyj \\\" by dodać dosłowne cudzysłowy wewnątrz string'a w cudzysłowach"
+  echo "   Przykład: echo \"He said \\\"Hello\\\" to me\""
+  echo "   Wynik: He said \"Hello\" to me"
+  echo
+  echo "2. Użyj \\\\ by dodać dosłowny backslash"
+  echo "   Przykład: echo \"Path: C:\\\\Users\\\\Name\""
+  echo "   Wynik: Path: C:\\Users\\Name"
+  echo
+  echo "3. Użyj \\\$ by dodać dosłowny znak dolara (zapobiega ekspansji zmiennych)"
+  echo "   Przykład: echo \"Price: \\\$5.99\""
+  echo "   Wynik: Price: \$5.99"
+  echo
+  echo "4. Użyj \\' dla dosłownych apostrofów gdy potrzebne"
+  echo "   Przykład: echo \"Don\\'t do that\""
+  echo "   Wynik: Don't do that"
+  echo
+  echo "🧪 ZADANIA DO WYKONANIA:"
+  echo "1. Wyświetl: echo \"EDITOR=\\\"nvim\\\"\""
+  echo "2. Pokaż cenę: echo \"Koszt: \\\$10.50\""
+  echo "3. Ścieżka Windows: echo \"C:\\\\Program Files\\\\App\""
+  echo "4. Mieszane: echo \"User \\\$USER's home is at \$HOME\""
+  echo
+  echo "💡 WSKAZÓWKA: Spróbuj tych przykładów w terminalu!"
+  echo "💡 Różnica: \\\$USER vs \$USER - pierwszy pokazuje literał, drugi wartość zmiennej"
 }
 
 function sandbox() {
