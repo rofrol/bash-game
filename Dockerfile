@@ -28,9 +28,11 @@ COPY --chown=student:student start.sh /home/student/start.sh
 COPY --chown=student:student sample_data.txt /home/student/sample_data.txt
 COPY --chown=student:student example_script.sh /home/student/example_script.sh
 COPY --chown=student:student backup_script.sh /home/student/backup_script.sh
+COPY --chown=student:student tab_completion_tutorial.sh /home/student/tab_completion_tutorial.sh
 COPY --chown=student:student bashrc /home/student/.bashrc
 RUN chmod +x /home/student/start.sh
 RUN chmod +x /home/student/example_script.sh
 RUN chmod +x /home/student/backup_script.sh
+RUN chmod +x /home/student/tab_completion_tutorial.sh
 
 CMD ["/home/student/start.sh"]

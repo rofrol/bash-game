@@ -15,24 +15,25 @@ LEVELS=(
   "🧠 LEVEL 3: Nawigacja w man: wyszukaj słowo 'sort'"
   "⚙️ LEVEL 4: Zmienna środowiskowa \$EDITOR"
   "🎨 LEVEL 5: Personalizacja PS1 — dostosuj swój prompt"
-  "🚀 LEVEL 6: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
-  "🧹 LEVEL 7: Ctrl+C, clear/reset"
-  "📜 LEVEL 8: Historia — strzałka w górę, Ctrl+R"
-  "📂 LEVEL 9: cd, pwd, cd -, cd ~"
-  "📁 LEVEL 10: mkdir, rm, cp, mv"
-  "📄 LEVEL 11: tee, >out.txt 2>&1, 2>/dev/null"
-  "🔐 LEVEL 12: chmod, chown"
-  "🔎 LEVEL 13: find, grep, awk, sed, rg, fd"
-  "📈 LEVEL 14: ps aux, kill -9, top, htop, btop"
-  "🌐 LEVEL 15: curl, wget"
-  "🧰 LEVEL 16: tail, head, wc -l, xargs"
-  "👤 LEVEL 17: whoami, id"
-  "📡 LEVEL 18: ping, traceroute, ip addr, ifconfig"
-  "🎯 LEVEL 19: jq"
-  "📝 LEVEL 20: neovim podstawy"
-  "🗜️ LEVEL 21: Archiwa i kompresja"
-  "🔧 LEVEL 22: Zaawansowane grep i regex"
-  "📊 LEVEL 23: cut, paste, sort, uniq - analiza danych"
+  "⭐ LEVEL 6: TAB completion — uzupełnianie poleceń i nazw"
+  "🚀 LEVEL 7: Ruch w linii — Ctrl+A, Ctrl+E, Backspace"
+  "🧹 LEVEL 8: Ctrl+C, clear/reset"
+  "📜 LEVEL 9: Historia — strzałka w górę, Ctrl+R"
+  "📂 LEVEL 10: cd, pwd, cd -, cd ~"
+  "📁 LEVEL 11: mkdir, rm, cp, mv"
+  "📄 LEVEL 12: tee, >out.txt 2>&1, 2>/dev/null"
+  "🔐 LEVEL 13: chmod, chown"
+  "🔎 LEVEL 14: find, grep, awk, sed, rg, fd"
+  "📈 LEVEL 15: ps aux, kill -9, top, htop, btop"
+  "🌐 LEVEL 16: curl, wget"
+  "🧰 LEVEL 17: tail, head, wc -l, xargs"
+  "👤 LEVEL 18: whoami, id"
+  "📡 LEVEL 19: ping, traceroute, ip addr, ifconfig"
+  "🎯 LEVEL 20: jq"
+  "📝 LEVEL 21: neovim podstawy"
+  "🗜️ LEVEL 22: Archiwa i kompresja"
+  "🔧 LEVEL 23: Zaawansowane grep i regex"
+  "📊 LEVEL 24: cut, paste, sort, uniq - analiza danych"
   "🔄 LEVEL 24: Pętle i warunki w bash"
   "📋 LEVEL 25: Zmienne i tablice w bash"
   "🚪 LEVEL 26: Funkcje w bash"
@@ -163,7 +164,52 @@ function level5() {
 
 function level6() {
   clear
-  echo "🚀 LEVEL 6: Poruszanie się po linii"
+  echo "⭐ LEVEL 6: TAB completion — uzupełnianie poleceń i nazw"
+  echo "=========================================="
+  echo
+  echo "TAB completion to jedna z najważniejszych funkcji bash!"
+  echo "Pozwala szybko uzupełniać nazwy plików, folderów i komend."
+  echo
+  echo "🎯 PODSTAWOWE UŻYCIE:"
+  echo "• Naciśnij TAB raz - uzupełnia do najdłuższego wspólnego prefixu"
+  echo "• Naciśnij TAB dwukrotnie - pokazuje wszystkie możliwości"
+  echo
+  echo "� RODZAJE UZUPEŁNIANIA:"
+  echo "1. Nazwy plików i folderów:"
+  echo "   ls sam<TAB>     → ls sample_data.txt"
+  echo "   cd te<TAB>      → cd temp2/"
+  echo
+  echo "2. Nazwy komend:"
+  echo "   gre<TAB>        → grep"
+  echo "   sys<TAB><TAB>   → systemctl, systemd, etc."
+  echo
+  echo "3. Opcje komend:"
+  echo "   ls -<TAB><TAB>  → pokazuje wszystkie opcje ls"
+  echo "   git <TAB><TAB>  → pokazuje subkomendy git"
+  echo
+  echo "4. Zmienne środowiskowe:"
+  echo "   echo \$HO<TAB>   → echo \$HOME"
+  echo "   echo \$PA<TAB>   → echo \$PATH"
+  echo
+  echo "🧪 ZADANIA DO WYKONANIA:"
+  echo "1. Użyj TAB by uzupełnić: ls exa<TAB>"
+  echo "2. Sprawdź opcje: man <TAB><TAB>"
+  echo "3. Przejdź do folderu: cd te<TAB>"
+  echo "4. Wyświetl zmienną: echo \$US<TAB>"
+  echo
+  echo "💡 WSKAZÓWKA: Wpisz 'tab_demo' by uruchomić interaktywną demonstrację!"
+  echo
+  echo "📝 DODATKOWE FUNKCJE:"
+  echo "• Korekta błędów ortograficznych jest włączona"
+  echo "• Completion nie rozróżnia wielkości liter"
+  echo "• Bash pamięta historię uzupełnień"
+  echo
+  echo "Wypróbuj teraz różne kombinacje TAB!"
+}
+
+function level7() {
+  clear
+  echo "�🚀 LEVEL 7: Poruszanie się po linii"
   echo "Użyj: Ctrl+A (początek), Ctrl+E (koniec), Backspace, Ctrl+D (usuń)"
   echo "Wprowadź długie polecenie i poćwicz nawigację."
   echo
@@ -176,7 +222,20 @@ function level6() {
 
 function level7() {
   clear
-  echo "🧹 LEVEL 7: Czyszczenie i anulowanie"
+  echo "🚀 LEVEL 7: Poruszanie się po linii"
+  echo "Użyj: Ctrl+A (początek), Ctrl+E (koniec), Backspace, Ctrl+D (usuń)"
+  echo "Wprowadź długie polecenie i poćwicz nawigację."
+  echo
+  echo "Dodatkowe skróty:"
+  echo "  Ctrl+U - usuń całą linię"
+  echo "  Ctrl+K - usuń od kursora do końca linii"
+  echo "  Ctrl+W - usuń słowo przed kursorem"
+  echo "  Alt+F / Alt+B - przesuń kursor o słowo"
+}
+
+function level8() {
+  clear
+  echo "🧹 LEVEL 8: Czyszczenie i anulowanie"
   echo "Użyj Ctrl+C by przerwać proces, a clear lub reset by wyczyścić ekran."
   echo "Wpisz sleep 100 i anuluj go Ctrl+C."
   echo
