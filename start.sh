@@ -112,6 +112,12 @@ function level2() {
   echo "  spacja - następna strona"
   echo "  b - poprzednia strona"
   echo
+  echo "Czytanie składni w man:"
+  echo "  [opcje] - rzeczy w nawiasach kwadratowych są opcjonalne"
+  echo "  <argument> - rzeczy w nawiasach ostrych są wymagane"
+  echo "  | - pionowa kreska oznacza 'lub' (wybierz jeden z wariantów)"
+  echo "  ... - wielokropek oznacza 'może być powtarzane'"
+  echo
   echo "💡 Wskazówka: Flaga -1 wymusza wyświetlanie jednego pliku na linię"
 }
 
